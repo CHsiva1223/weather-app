@@ -1,62 +1,29 @@
-/* style.css */
+function getWeather() {
+  let city = document.getElementById("city").value.toLowerCase();
+  let result = document.getElementById("result");
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f1f1f1;
+  // Dummy weather data
+  const weatherData = {
+    hyderabad: { temp: 30, condition: "Sunny", humidity: 40, wind: 10 },
+    delhi: { temp: 35, condition: "Hot & Dry", humidity: 25, wind: 12 },
+    mumbai: { temp: 29, condition: "Rainy", humidity: 80, wind: 15 },
+    chennai: { temp: 33, condition: "Humid", humidity: 70, wind: 14 }
+  };
+
+  if (weatherData[city]) {
+    let data = weatherData[city];
+    result.innerHTML = `
+      <h3>${city.charAt(0).toUpperCase() + city.slice(1)}</h3>
+      <p>🌡 Temp: ${data.temp} °C</p>
+      <p>🌥 Weather: ${data.condition}</p>
+      <p>💧 Humidity: ${data.humidity}%</p>
+      <p>💨 Wind: ${data.wind} km/h</p>
+    `;
+  } else {
+    result.innerHTML = `<p style="color:red;">City not found (Demo only supports: Hyderabad, Delhi, Mumbai, Chennai)</p>`;
+  }
 }
 
-.app-container {
-    text-align: center;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
 
-.search {
-    margin-bottom: 20px;
-}
-
-input {
-    padding: 10px;
-    font-size: 16px;
-    width: 70%;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.weather-info {
-    margin-top: 20px;
-}
-
-.weather-info p {
-    font-size: 18px;
-    margin: 5px 0;
-}
+ 

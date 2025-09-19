@@ -1,38 +1,25 @@
-const apiKey = "00223950fa3c89400eb463f277adb5be"; 
+function getWeather() {
+  let city = document.getElementById("city").value.toLowerCase();
+  let result = document.getElementById("result");
 
+  // Dummy weather data
+  const weatherData = {
+    hyderabad: { temp: 30, condition: "Sunny", humidity: 40, wind: 10 },
+    delhi: { temp: 35, condition: "Hot & Dry", humidity: 25, wind: 12 },
+    mumbai: { temp: 29, condition: "Rainy", humidity: 80, wind: 15 },
+    chennai: { temp: 33, condition: "Humid", humidity: 70, wind: 14 }
+  };
 
-
-async function getWeather() {
-  const city = document.getElementById("cityInput").value;
-  const weatherBox = document.getElementById("weatherResult");
-
-  if (!city) {
-    weatherBox.innerHTML = "<p>Please enter a city name.</p>";
-    return;
-  }
-
-  try {
-    const url = https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric;
-    const response = await fetch(url);
-    const data = await response.json();
-
-    if (data.cod === "404") {
-      weatherBox.innerHTML = <p>❌ City not found</p>;
-      return;
-    }
-
-    const { name } = data;
-    const { temp, humidity } = data.main;
-    const { description, icon } = data.weather[0];
-
-    weatherBox.innerHTML = `
-      <h2>${name}</h2>
-      <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}">
-      <p><strong>${temp}°C</strong></p>
-      <p>${description}</p>
-      <p>💧 Humidity: ${humidity}%</p>
+  if (weatherData[city]) {
+    let data = weatherData[city];
+    result.innerHTML = `
+      <h3>${city.charAt(0).toUpperCase() + city.slice(1)}</h3>
+      <p>🌡 Temp: ${data.temp} °C</p>
+      <p>🌥 Weather: ${data.condition}</p>
+      <p>💧 Humidity: ${data.humidity}%</p>
+      <p>💨 Wind: ${data.wind} km/h</p>
     `;
-  } catch (error) {
-    weatherBox.innerHTML = "<p>⚠ Error fetching weather data.</p>";
+  } else {
+    result.innerHTML = `<p style="color:red;">City not found (Demo only supports: Hyderabad, Delhi, Mumbai, Chennai)</p>`;
   }
 }

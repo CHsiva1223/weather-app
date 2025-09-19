@@ -1,6 +1,5 @@
-// Weather data for all Indian states + Union Territories
+// Weather data for all Indian states, UTs, and major world cities
 const weatherData = {
- {
   // India - States & Capitals
   "andhra pradesh": { temp: 32, condition: "Sunny", humidity: 50, wind: 10 },
   "amaravati": { temp: 32, condition: "Sunny", humidity: 50, wind: 10 },
@@ -101,7 +100,7 @@ function getWeather() {
       <p>💨 Wind: ${data.wind} km/h</p>
     `;
   } else {
-    result.innerHTML = `<p style="color:red;">State/UT not found. Example: Andhra Pradesh Amaravati, Arunachal Pradesh Itanagar, Assam Dispur, Bihar Patna, Chhattisgarh Raipur, Goa Panaji, Gujarat Gandhinagar, Haryana Chandigarh, Himachal Pradesh Shimla, Jharkhand Ranchi, Karnataka Bengaluru, Kerala Thiruvananthapuram, Madhya Pradesh Bhopal, Maharashtra Mumbai, Manipur Imphal, Meghalaya Shillong, Mizoram Aizawl, Nagaland Kohima, Odisha Bhubaneswar, Punjab Chandigarh, Rajasthan Jaipur, Sikkim Gangtok, Tamil Nadu Chennai, Telangana Hyderabad, Tripura Agartala, Uttar Pradesh Lucknow, Uttarakhand Dehradun, West Bengal Kolkata, Andaman and Nicobar Islands Port Blair, Chandigarh Chandigarh, Dadra and Nagar Haveli and Daman and Diu Daman, Delhi New Delhi, Jammu and Kashmir Srinagar Jammu, Ladakh Leh, Lakshadweep Kavaratti, Puducherry new york, los angeles, chicago, london, paris, berlin, tokyo, beijing, singapore, sydney, melbourne, cairo, johannesburg, rio, buenos aires, dubai, riyadh
+    result.innerHTML = `<p style="color:red;">City/State/UT not found in demo data. example: Andhra Pradesh Amaravati, Arunachal Pradesh Itanagar, Assam Dispur, Bihar Patna, Chhattisgarh Raipur, Goa Panaji, Gujarat Gandhinagar, Haryana Chandigarh, Himachal Pradesh Shimla, Jharkhand Ranchi, Karnataka Bengaluru, Kerala Thiruvananthapuram, Madhya Pradesh Bhopal, Maharashtra Mumbai, Manipur Imphal, Meghalaya Shillong, Mizoram Aizawl, Nagaland Kohima, Odisha Bhubaneswar, Punjab Chandigarh, Rajasthan Jaipur, Sikkim Gangtok, Tamil Nadu Chennai, Telangana Hyderabad, Tripura Agartala, Uttar Pradesh Lucknow, Uttarakhand Dehradun, West Bengal Kolkata, Andaman and Nicobar Islands Port Blair, Chandigarh Chandigarh, Dadra and Nagar Haveli and Daman and Diu Daman, Delhi New Delhi, Jammu and Kashmir Srinagar Jammu, Ladakh Leh, Lakshadweep Kavaratti, Puducherry new york, los angeles, chicago, london, paris, berlin, tokyo, beijing, singapore, sydney, melbourne, cairo, johannesburg, rio, buenos aires, dubai, riyadh
 </p>`;
   }
 }

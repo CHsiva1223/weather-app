@@ -1,6 +1,6 @@
 // Weather data for all Indian states + Union Territories
 const weatherData = {
-const globalWeatherData = {
+ {
   // India - States & Capitals
   "andhra pradesh": { temp: 32, condition: "Sunny", humidity: 50, wind: 10 },
   "amaravati": { temp: 32, condition: "Sunny", humidity: 50, wind: 10 },
